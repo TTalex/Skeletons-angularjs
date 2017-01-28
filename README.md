@@ -37,3 +37,35 @@ Then restart nginx
 ```
 sudo service nginx restart
 ```
+
+App shoud be accessible on http://localhost
+
+## Tests
+
+#### Installation
+Install java if needed (only for End to end tests, not needed for unit tests)
+```
+sudo apt install openjdk-8-jre-headless
+```
+
+Install test modules
+```
+npm install
+```
+
+Update libs for end to end tests
+```
+node_modules/.bin/webdriver-manager update
+```
+
+#### Running
+Run unit tests
+```
+npm test
+```
+
+Run end to end tests
+```
+node_modules/.bin/webdriver-manager start
+node_modules/.bin/protractor test/e2e/conf.js
+```

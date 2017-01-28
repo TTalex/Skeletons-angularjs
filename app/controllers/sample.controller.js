@@ -6,7 +6,11 @@ app.controller('SampleController',
 
     $scope.callservice = function(){
         sampleservice.get()
-            .success(function(data) {})
+            .success(function(data) {$scope.message = data.message;})
             .error(function(data) {});
+    }
+
+    $scope.uppercase_message = function(){
+        $scope.message = $scope.message.toUpperCase();
     }
 }]);
